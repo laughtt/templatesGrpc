@@ -1,0 +1,20 @@
+syntax = "proto3";
+package v1;
+import "google/protobuf/timestamp.proto";
+
+
+message CreateRequest{
+    int64 id = 1;
+    string message = 2;
+    google.protobuf.Timestamp reminder = 4;
+}
+
+message CreateResponse{
+    int64 id = 1;
+    string message = 2;
+    google.protobuf.Timestamp reminder = 4;
+}
+
+service authService{
+    rpc SendMessage(CreateRequest) returns (CreateResponse);
+}

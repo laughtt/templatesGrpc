@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  database:
+    build: ./db-init
+    image: mydb
+    container_name: mysqldb
+    restart: always
+    volumes:
+     - my-sqldata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password123
+      - MYSQL_USER=db
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=test
+    networks:
+      dbNetwork:
+volumes:
+  my-sqldata:
+    name: mysql
+networks: 
+  dbNetwork:
