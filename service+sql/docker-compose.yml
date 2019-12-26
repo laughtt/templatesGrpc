@@ -1,6 +1,16 @@
 version: '3.6'
 
 services:
+  node:
+    build: .
+    image: dbservice
+    container_name: dbservice
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks:
+      dbNetwork:
   database:
     build: ./db-init
     image: mydb

@@ -12,6 +12,7 @@ message CreateRequest{
 message CreateResponse{
     int64 id = 1;
     string message = 2;
+    string error = 3;
     google.protobuf.Timestamp reminder = 4;
 }
 

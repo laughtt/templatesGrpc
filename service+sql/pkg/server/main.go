@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/signal"
 
-	v1 "github.com/laughtt/loginService/api/proto/v1"
+	v1 "github.com/laughtt/templatesGrpc/service+sql/api/protov1"
 	"google.golang.org/grpc"
 )
 
